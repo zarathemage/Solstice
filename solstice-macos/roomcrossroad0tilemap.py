@@ -3,6 +3,7 @@ import pygame
 from tilemap import *
 
 from ochreslab import *
+from ochredoubleheightslab import *
 from ochrefloor import *
 
 class RoomCrossRoad0Tilemap(TileMap):
@@ -10,7 +11,7 @@ class RoomCrossRoad0Tilemap(TileMap):
         TileMap.__init__(self)
         
         self.map = [
-            [0,0,1,0,0],
+            [0,0,2,0,0],
             [0,0,1,0,0],
             [0,0,0,0,0],
             [0,0,0,0,0],
@@ -23,6 +24,7 @@ class RoomCrossRoad0Tilemap(TileMap):
         self.mapwidth = 5
         self.mapheight = 5
 
+        self.ochredoubleslab = 2
         self.ochreslab = 1
         self.floortile = 0
 
@@ -34,6 +36,9 @@ class RoomCrossRoad0Tilemap(TileMap):
         for j in range(0,self.mapheight):
             self.tilemap.append([])
             for i in range(0, self.mapwidth):
+                if self.map[i][j] == 2:
+                    ### NOTE zpos 20
+                    self.tilemap[j].append(OchreDoubleHeightSlab(self.x+i*self.tilewidth, self.y+j*self.tileheight, 20, self.tilewidth, self.tileheight))
                 if self.map[i][j] == 1:
                     ### NOTE zpos 10
                     self.tilemap[j].append(OchreSlab(self.x+i*self.tilewidth, self.y+j*self.tileheight, 10, self.tilewidth, self.tileheight))
@@ -58,7 +63,9 @@ class RoomCrossRoad0Tilemap(TileMap):
             k += self.tilewidth            
             ###for i in range(0, self.mapwidth):
             i = 0 ###self.mapwidth-1
-            while i < self.mapwidth:### >= 0:    
+            while i < self.mapwidth:### >= 0:
+                if self.map[i][j] == self.ochredoubleslab:
+                    screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth+self.x, j*self.tileheight+self.y])
                 if self.map[i][j] == self.ochreslab:
                     screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth+self.x, j*self.tileheight+self.y])
                 if self.map[i][j] == self.floortile:

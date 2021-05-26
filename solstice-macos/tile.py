@@ -4,7 +4,7 @@ class Tile:
     def __init__(self,x,y,z,w,h):
         self.x = x
         self.y = y
-        self.z = z
+        self.z = z ### the height to jump on
         self.w = w ### maximum width of diamond tile
         self.h = h ### maximum height of diamond tile
 
