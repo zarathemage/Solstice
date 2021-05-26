@@ -13,12 +13,13 @@ class Solstice:
         self.HEIGHT = 600
         self.SCREEN = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
 
-        pygame.display.set_caption('Solstice MacOS')
+        pygame.display.set_caption('Solstice : Underdark')
         
         pygame.display.flip()
         pygame.key.set_repeat(100,10)
 
         self.room = RoomCrossRoad0()
+        self.nextroom = None
         self.player = Aldhebrand(340,340,48,48,0, self.room.tilemap.tileheight)
         
         self.openingscreen = OpeningScreen()
@@ -58,6 +59,12 @@ class Solstice:
                         self.player.magiccrystal()
 
                 self.player.update(self.room.tilemap)
+
+                self.nextroom = self.room.exit(self.player)
+                if self.nextroom != None:
+                    self.room = self.nextroom
+                    self.nextroom = None
+                
                 self.SCREEN.fill((0,0,0))
                 self.room.blit(self.SCREEN)
                 self.player.blit(self.SCREEN)

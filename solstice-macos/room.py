@@ -12,3 +12,6 @@ class Room:
         
     def collide(self, x,y):
         pass
+
+    def exit(self, player):
+        return None
