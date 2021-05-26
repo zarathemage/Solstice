@@ -68,7 +68,7 @@ class Tile:
         else:
             return False
 
-    ### check player x,y over right diagonal of parallellogram
+    ### check player x,y before right diagonal of parallellogram
     def diagonalSolutionRightDiagonal(self, y2,y1,x2,x1,playerx,playery):
         dy = y2 - y1
         dx = x2 - x1

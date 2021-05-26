@@ -9,7 +9,7 @@ class Slab(Tile):
         self.w = w
         self.h = h
 
-        self.z = z
+        self.z = z ### height of the tileabove floor/ground level
         
         self.image = None
 
