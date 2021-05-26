@@ -26,8 +26,8 @@ class RoomCrossRoad0Tilemap(TileMap):
         self.ochreslab = 1
         self.floortile = 0
 
-        self.x = 0
-        self.y = 0
+        self.x = -100
+        self.y = 200
     
         self.tilemap = []
 
@@ -57,12 +57,12 @@ class RoomCrossRoad0Tilemap(TileMap):
         while j >= 0:
             k += self.tilewidth            
             ###for i in range(0, self.mapwidth):
-            i = self.mapwidth-1
-            while i >= 0:    
+            i = 0 ###self.mapwidth-1
+            while i < self.mapwidth:### >= 0:    
                 if self.map[i][j] == self.ochreslab:
                     screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth+self.x, j*self.tileheight+self.y])
                 if self.map[i][j] == self.floortile:
                     screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth+self.x, j*self.tileheight+self.y])
-                i -= 1
+                i += 1
             j -= 1
 
