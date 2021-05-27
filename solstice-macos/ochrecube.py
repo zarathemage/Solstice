@@ -16,7 +16,7 @@ class OchreCube(Slab):
         
     def collidexy(self, player, tilemap):
         ### FIXME coords with 4 diagonals (add blit offset for this cube class)
-        offsety = - int((self.y - tilemap.y)/tilemap.mapwidth) * tilemap.tileheight/2
+        offsety = - int((self.y - tilemap.y)/tilemap.tilewidth) * tilemap.tileheight/2
         
         if type(player.lastmove).__name__ == 'LeftMove': ### left up
             if player.y + offsety > self.y+tilemap.tileheight and player.x < self.x+tilemap.tilewidth and self.rightDiagonalSolution(self.y+28,self.y+tilemap.tileheight/2,
