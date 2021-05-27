@@ -2,13 +2,14 @@ import pygame
 
 from tilemap import *
 
-from ochrecube import *
+from ochrecubez import *
 from ochrefloor import *
 
 class UnderdarkRoom2Tilemap(TileMap):
     def __init__(self):
         TileMap.__init__(self)
-        
+
+        ### map with (piece, zposition)
         self.map = [
             [(0,0),(1,30),(1,30),(1,30),(0,0)],
             [(0,0),(0,0),(1,20),(0,0),(0,0)],
@@ -36,7 +37,7 @@ class UnderdarkRoom2Tilemap(TileMap):
             for i in range(0, self.mapwidth):
                 if self.map[i][j][0] == 1:
                     ### NOTE zpos 10
-                    self.tilemap[j].append(OchreCube(self.x+i*self.tilewidth, self.y+j*self.tileheight, self.map[i][j][1], self.tilewidth, self.tileheight))
+                    self.tilemap[j].append(OchreCubeZ(self.x+i*self.tilewidth, self.y+j*self.tileheight, self.map[i][j][1], self.tilewidth, self.tileheight))
                 if self.map[i][j][0] == 0:
                     self.tilemap[j].append(OchreFloor(self.x+i*self.tilewidth, self.y+j*self.tileheight, self.tilewidth, self.tileheight))
         
