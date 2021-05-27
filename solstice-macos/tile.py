@@ -23,7 +23,7 @@ class Tile:
         dx = x2 - x1
         d = dy/dx
 
-        if (abs(d*(playerx - x1) - (playery - y1)) > 0):
+        if (d*(playerx - x1) - (playery - y1) > 0):
             return True
         else:
             return False
