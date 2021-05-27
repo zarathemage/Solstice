@@ -24,8 +24,7 @@ class OchreSlab(Slab):
                                     player.x, 
                                     player.y):
                 return True
-            else:
-                return False
+            
         if type(player.lastmove).__name__ == 'RightMove': ### right down
             if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
                                     self.x+tilemap.tilewidth,self.x,
@@ -34,8 +33,7 @@ class OchreSlab(Slab):
                                     player.x+player.width, 
                                     player.y+player.height):
                 return True
-            else:
-                return False
+            
         if type(player.lastmove).__name__ == 'UpMove': ### right down
             if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
                                     self.x+tilemap.tilewidth,self.x,
@@ -44,8 +42,7 @@ class OchreSlab(Slab):
                                     player.x+player.width, 
                                     player.y):
                 return True
-            else:
-                return False
+            
         if type(player.lastmove).__name__ == 'DownMove': ### left down
             if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
                                     self.x+tilemap.tilewidth,self.x,
@@ -54,8 +51,7 @@ class OchreSlab(Slab):
                                     player.x, 
                                     player.y+player.height):
                 return True
-            else:
-                return False
-
+            
+                
         return False
 

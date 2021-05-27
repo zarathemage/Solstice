@@ -22,6 +22,7 @@ class Aldhebrand:
         self.dt = 0.5
         
         self.image = pygame.image.load("./pics/wizard1.png")
+        self.image.set_colorkey((255,255,255))
 
         self.lastmove = None
 
