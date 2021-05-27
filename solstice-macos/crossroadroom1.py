@@ -4,6 +4,7 @@ from room import *
 from crossroadroom1tilemap import *
 
 from underdarkroom1 import *
+from underdarkroom2 import *
 
 class CrossRoadRoom1(Room):
     def __init__(self):
@@ -24,5 +25,7 @@ class CrossRoadRoom1(Room):
     def exit(self, player):
         if player.x > 350: ### FIXME
             return UnderdarkRoom1()
+        elif player.x < 300:
+            return UnderdarkRoom2()
         else:
             return None
