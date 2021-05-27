@@ -59,7 +59,7 @@ class UnderdarkRoom2Tilemap(TileMap):
             i = self.mapwidth-1
             while i  >= 0:
                 if self.map[i][j] == self.ochrecubeslab:
-                    screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth/2+self.x, j*self.tileheight - i*l + self.y])
+                    screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth/2+self.x, j*self.tileheight - i*l + self.y - self.map[i][j][1]])
                 if self.map[i][j] == self.floortile:
                     screen.blit(self.tilemap[i][j].image, [k+i*self.tilewidth+self.x, j*self.tileheight+ - i*l + self.y])
                 i -= 1
