@@ -2,8 +2,8 @@ import pygame
 
 from aldhebrand import *
 
-from roomcrossroad0 import *
-from underdarkroom0 import *
+from roomcrossroad1 import *
+from underdarkroom1 import *
 
 from openingscreen import *
 
@@ -20,7 +20,7 @@ class Solstice:
         pygame.display.flip()
         pygame.key.set_repeat(100,10)
 
-        self.room = RoomCrossRoad0()###start at RoomCrossRoad0()
+        self.room = RoomCrossRoad1()###start at RoomCrossRoad0()
         self.nextroom = None
         self.player = Aldhebrand(340,340,48,48,0, self.room.tilemap.tileheight)
         
