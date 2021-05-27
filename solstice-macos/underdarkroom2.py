@@ -1,14 +1,14 @@
 import pygame
 
 from room import *
-from underdarkroom1tilemap import *
+from underdarkroom2tilemap import *
 
 class UnderdarkRoom2(Room):
     def __init__(self):
         Room.__init__(self,0,0)
         self.image = pygame.image.load("./pics/solstice-roomcrossroad-0.png")
 
-        self.tilemap = UnderdarkRoom1Tilemap()
+        self.tilemap = UnderdarkRoom2Tilemap()
         
     def collide(self, x,y):
         1 ### FIXME
