@@ -18,9 +18,9 @@ class OchreSlab(Slab):
         ### FIXME coords of player and move to parallellogram boundary coords
         if type(player.lastmove).__name__ == 'LeftMove': ### left up
             if self.leftDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+                                    self.x+tilemap.tilewidth,self.x,
                                     player.x, 
-                                    player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+self.w*2,self.x+self.w,
+                                    player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x, 
                                     player.y):
                 return True
@@ -28,10 +28,9 @@ class OchreSlab(Slab):
                 return False
         if type(player.lastmove).__name__ == 'RightMove': ### right down
             if self.leftDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+                                    self.x+tilemap.tilewidth,self.x,
                                     player.x+player.width, 
-                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x+player.width, 
                                     player.y+player.height):
                 return True
@@ -41,8 +40,7 @@ class OchreSlab(Slab):
             if self.leftDiagonalSolution(self.y,self.y+self.h,
                                     self.x+self.w,self.x,
                                     player.x+player.width, 
-                                    player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+                                    player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x+player.width, 
                                     player.y):
                 return True
@@ -52,8 +50,7 @@ class OchreSlab(Slab):
             if self.leftDiagonalSolution(self.y,self.y+self.h,
                                     self.x+self.w,self.x,
                                     player.x, 
-                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x, 
                                     player.y+player.height):
                 return True
