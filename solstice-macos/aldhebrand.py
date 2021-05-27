@@ -105,3 +105,6 @@ class Aldhebrand:
     def blit(self, screen):
         screen.blit(self.image, [self.screenx, self.screeny])
 
+    def warp(self,x,y):
+        self.x = x
+        self.y = y

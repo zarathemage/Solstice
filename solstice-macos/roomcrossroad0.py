@@ -22,7 +22,7 @@ class RoomCrossRoad0(Room):
 
 
     def exit(self, player):
-        if player.x > 500: ### FIXME
+        if player.x > 350: ### FIXME
             return UnderdarkRoom0()
         else:
             return None
