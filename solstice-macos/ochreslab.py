@@ -20,7 +20,7 @@ class OchreSlab(Slab):
             if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
                                     self.x+tilemap.tilewidth,self.x,
                                     player.x, 
-                                    player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
+                                    player.y) and self.rightDiagonalSolution(self.y,self.y+tilemap.tileheight,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x, 
                                     player.y):
                 return True
