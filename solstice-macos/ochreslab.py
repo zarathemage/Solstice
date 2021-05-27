@@ -17,7 +17,7 @@ class OchreSlab(Slab):
     def collidexy(self, player, tilemap):
         ### FIXME coords of player and move to parallellogram boundary coords
         if type(player.lastmove).__name__ == 'LeftMove': ### left up
-            if self.leftDiagonalSolution(self.y,self.y+self.h,
+            if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
                                     self.x+tilemap.tilewidth,self.x,
                                     player.x, 
                                     player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
@@ -27,30 +27,30 @@ class OchreSlab(Slab):
             else:
                 return False
         if type(player.lastmove).__name__ == 'RightMove': ### right down
-            if self.leftDiagonalSolution(self.y,self.y+self.h,
+            if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
                                     self.x+tilemap.tilewidth,self.x,
                                     player.x+player.width, 
-                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
+                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+tilemap.tileheight,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x+player.width, 
                                     player.y+player.height):
                 return True
             else:
                 return False
         if type(player.lastmove).__name__ == 'UpMove': ### right down
-            if self.leftDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+            if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
+                                    self.x+tilemap.tilewidth,self.x,
                                     player.x+player.width, 
-                                    player.y) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
+                                    player.y) and self.rightDiagonalSolution(self.y,self.y+tilemap.tileheight,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x+player.width, 
                                     player.y):
                 return True
             else:
                 return False
         if type(player.lastmove).__name__ == 'DownMove': ### left down
-            if self.leftDiagonalSolution(self.y,self.y+self.h,
-                                    self.x+self.w,self.x,
+            if self.leftDiagonalSolution(self.y,self.y+tilemap.tileheight,
+                                    self.x+tilemap.tilewidth,self.x,
                                     player.x, 
-                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+self.h,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
+                                    player.y+player.height) and self.rightDiagonalSolution(self.y,self.y+tilemap.tileheight,self.x+tilemap.tilewidth*2,self.x+tilemap.tilewidth,
                                     player.x, 
                                     player.y+player.height):
                 return True
