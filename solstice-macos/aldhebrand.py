@@ -38,8 +38,8 @@ class Aldhebrand:
         self.lastmove = LeftMove()
         self.lastmove.move(self)
 ###        self.x -= 1
-        self.screenx -= 1
-        self.screeny -= self.dt
+        self.screenx -= 4
+        self.screeny -= 4*self.dt
 
         if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
             self.y -= 1
@@ -48,8 +48,8 @@ class Aldhebrand:
         self.lastmove = RightMove()
         self.lastmove.move(self)
 ###        self.x += 1
-        self.screenx += 1
-        self.screeny += self.dt
+        self.screenx += 4
+        self.screeny += 4*self.dt
         
         if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
             self.y += 1
@@ -59,8 +59,8 @@ class Aldhebrand:
         self.lastmove.move(self)
 
 ###        self.x += 1
-        self.screenx += 1
-        self.screeny -= self.dt
+        self.screenx += 4
+        self.screeny -= 4*self.dt
         
         if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
             self.y -= 1
@@ -70,8 +70,8 @@ class Aldhebrand:
         self.lastmove.move(self)
 
 ##        self.x -= 1
-        self.screenx -= 1
-        self.screeny += self.dt
+        self.screenx -= 4
+        self.screeny += 4*self.dt
 
         if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
             self.y += 1
