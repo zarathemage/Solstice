@@ -47,6 +47,8 @@ class Solstice:
 
                     if event.key == pygame.K_LEFT:
                         self.player.moveLeft()
+                        ###print(self.player.x)
+                        ###print(self.player.y)
                     if event.key == pygame.K_RIGHT:
                         self.player.moveRight()
                     if event.key == pygame.K_DOWN:
@@ -62,7 +64,7 @@ class Solstice:
 
                 self.player.update(self.room.tilemap)
 
-                self.nextroom = self.room.exit(self.player)
+                self.nextroom = self.room.exit(self.player, self.SCREEN)
                 if self.nextroom != None:
                     self.room = self.nextroom
                     self.nextroom = None

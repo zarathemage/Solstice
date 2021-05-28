@@ -31,7 +31,7 @@ class CrossRoadRoom1(Room):
             o.move_mainloop(player, self, screen)
             
             return UnderdarkRoom2()
-        elif player.x < 83 and player.y > 305 and player.y < 405:
+        elif player.x < 83 and player.y > 205 and player.y < 305:
             ### play movie of walking through door
             o = MoveThroughDoorLoopObject()
             o.move_mainloop(player, self, screen)            
