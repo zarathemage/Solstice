@@ -26,13 +26,16 @@ class CrossRoadRoom1(Room):
 
     def exit(self, player, screen):
         if player.x > 350: ### FIXME
-
             ### play movie of walking through door
             o = MoveThroughDoorLoopObject()
             o.move_mainloop(player, self, screen)
             
             return UnderdarkRoom1()
         elif player.x < 300:
+            ### play movie of walking through door
+            o = MoveThroughDoorLoopObject()
+            o.move_mainloop(player, self, screen)            
+
             return UnderdarkRoom2()
         else:
             return None

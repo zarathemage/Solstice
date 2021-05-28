@@ -1,3 +1,5 @@
+import time
+
 class MoveThroughDoorLoopObject:
     def __init__(self):
         self.counter = 10
@@ -9,6 +11,6 @@ class MoveThroughDoorLoopObject:
             room.blit(screen)
             player.blit(screen)
             self.counter -= 1
-
+            time.sleep(1/100.0)
             ### change player x,y based on playe.lastmove
             player.lastmove.move(player)
