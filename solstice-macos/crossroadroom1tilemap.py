@@ -73,3 +73,12 @@ class CrossRoadRoom1Tilemap(TileMap):
                 i += 1
             j -= 1
 
+
+    def checkboundaries(self, player):
+        ### FIXME fix y2,y1,x2,x1 for this room coords
+        if self.leftDiagonalSolution(100,100,150,50,
+                                         player.x, player.y):
+            return True
+        else:
+            return False
+            
