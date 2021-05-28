@@ -104,8 +104,8 @@ class Aldhebrand:
             self.fallOnce()
 
         ### check if player is outside map
-        if tilemap.checkboundaries(self):
-            self.lastmove.undomove()
+        if self.lastmove and tilemap.checkboundaries(self):
+            self.lastmove.undomove(self)
             
     def blit(self, screen):
         screen.blit(self.image, [self.screenx, self.screeny])

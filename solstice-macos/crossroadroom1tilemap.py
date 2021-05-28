@@ -75,8 +75,12 @@ class CrossRoadRoom1Tilemap(TileMap):
 
 
     def checkboundaries(self, player):
+        ### under upper tiles (north wall)
+        if player.y > 100: ## FIXME coord
+            return True
+        
         ### FIXME fix y2,y1,x2,x1 for this room coords
-        if self.leftDiagonalSolution(100,100,150,50,
+        if not self.leftDiagonalSolution(100,100,150,50,
                                          player.x, player.y):
             return True
         else:
