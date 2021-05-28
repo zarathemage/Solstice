@@ -41,8 +41,8 @@ class Aldhebrand:
         self.screenx -= 4
         self.screeny -= 4*self.dt
 
-        if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
-            self.y -= 1
+        if self.screeny % self.tileheight * 4*self.dt == 0: ### self.tileheight / 2
+            self.y -= 4
         
     def moveRight(self):
         self.lastmove = RightMove()
@@ -51,8 +51,8 @@ class Aldhebrand:
         self.screenx += 4
         self.screeny += 4*self.dt
         
-        if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
-            self.y += 1
+        if self.screeny % self.tileheight * 4*self.dt == 0: ### self.tileheight / 2
+            self.y += 4
 
     def moveUp(self):
         self.lastmove = UpMove()
@@ -62,8 +62,8 @@ class Aldhebrand:
         self.screenx += 4
         self.screeny -= 4*self.dt
         
-        if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
-            self.y -= 1
+        if self.screeny % self.tileheight * 4*self.dt == 0: ### self.tileheight / 2
+            self.y -= 4
             
     def moveDown(self):
         self.lastmove = DownMove()
@@ -73,8 +73,8 @@ class Aldhebrand:
         self.screenx -= 4
         self.screeny += 4*self.dt
 
-        if self.screeny % self.tileheight * self.dt == 0: ### self.tileheight / 2
-            self.y += 1
+        if self.screeny % self.tileheight * 4*self.dt == 0: ### self.tileheight / 2
+            self.y += 4
         
     def fall(self, tile):
         if tile != None and self.z > tile.z:
