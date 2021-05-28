@@ -80,6 +80,7 @@ class CrossRoadRoom1Tilemap(TileMap):
             return True
         
         ### FIXME fix y2,y1,x2,x1 for this room coords
+        ### and use several diagonals for portals in the room
         if not self.leftDiagonalSolution(100,100,150,50,
                                          player.x, player.y):
             return True
